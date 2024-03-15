@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from "react";
 import Layout from "./layout/layout";
 import useTienda from "./hooks/useTienda";
-import { formatearMoneda } from "./utils";
+import { formatearMoneda } from "./lib";
 export default function Total() {
 
   const { pedido , nombre, totalPagar , setNombre , crearOrden } = useTienda();

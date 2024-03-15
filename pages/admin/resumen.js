@@ -1,6 +1,6 @@
 import AdminLayout from "../layout/adminLayout";
 import { PrismaClient } from "@prisma/client";
-import { formatearMoneda } from "../utils";
+import { formatearMoneda } from "../lib";
 import { useEffect, useState } from "react";
 const prisma = new PrismaClient();
 

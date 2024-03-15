@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image";
 import useTienda from "../hooks/useTienda";
-import { formatearMoneda } from "../utils/index";
+import { formatearMoneda } from "../lib/index";
 import { useEffect, useState } from "react";
 
 export default function ModalProducto() {
