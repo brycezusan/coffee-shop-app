@@ -1,6 +1,6 @@
 import Image from "next/image";
 import useTienda from "../hooks/useTienda"
-import { formatearMoneda } from "../lib";
+import { formatearMoneda } from "../../.git";
 
 export default function CardProducto({ nombre, precio, imagen, id }) {
   const {handleSelectProduct, handleChangeModal} = useTienda()

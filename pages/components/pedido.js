@@ -1,6 +1,6 @@
 import Image from "next/image";
 import useTienda from "../hooks/useTienda";
-import { formatearMoneda } from "../lib/index";
+import { formatearMoneda } from "../../lib";
 import { useState } from "react";
 
 export default function Pedido({ nombre, imagen, id, cantidad, precio }) {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { formatearFecha, formatearMoneda } from "../lib";
+import { formatearFecha, formatearMoneda } from "../../lib";
 import axios from "axios";
 import { toast } from "react-toastify";
 

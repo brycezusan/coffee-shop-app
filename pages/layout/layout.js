@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Head from "next/head";
 import Sidebar from "../components/sidebar";
-import ModalProducto from "../components/modal"
+import ModalProducto from "../components/modal";
 import Modal from "react-modal";
 import useTienda from "../hooks/useTienda";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navegacion from "../components/navegacion";
 
 const customStyles = {
@@ -18,12 +18,10 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
-Modal.setAppElement('#__next');
-
+Modal.setAppElement("#__next");
 
 export default function layout({ children, title }) {
-
-  const { modal } = useTienda()
+  const { modal } = useTienda();
 
   return (
     <>
@@ -41,14 +39,12 @@ export default function layout({ children, title }) {
           {children}
         </section>
       </main>
-     {
-      modal && (
+      {modal && (
         <Modal isOpen={modal} style={customStyles}>
-          <ModalProducto  />
+          <ModalProducto />
         </Modal>
-      )
-     }
-     <ToastContainer />
+      )}
+      <ToastContainer />
     </>
   );
 }
