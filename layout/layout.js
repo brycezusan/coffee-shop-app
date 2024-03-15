@@ -3,10 +3,10 @@ import Head from "next/head";
 import Sidebar from "../components/sidebar";
 import ModalProducto from "../components/modal";
 import Modal from "react-modal";
-import useTienda from "../hooks/useTienda";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navegacion from "../components/navegacion";
+import useTienda from "../hooks/useTienda";
 
 const customStyles = {
   content: {
@@ -32,9 +32,9 @@ export default function layout({ children, title }) {
           content="Tiendita,Quiosko,CooffeShop , Bazar"
         />
       </Head>
-      <main className="md:flex ">
+      <main className="flex flex-col md:flex-row">
         <Sidebar />
-        <section className="md:w-4/6 xl:w-9/12 2xl:w-10/12 mx-auto h-screen md:overflow-y-scroll bg-indigo-50/10 py-10">
+        <section className="md:w-4/6 xl:w-8/12 2xl:w-10/12 mx-auto h-screen md:overflow-y-scroll bg-indigo-50/10 py-10">
           <Navegacion />
           {children}
         </section>

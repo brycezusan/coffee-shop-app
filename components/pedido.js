@@ -1,12 +1,13 @@
-import Image from "next/image";
-import useTienda from "../hooks/useTienda";
-import { formatearMoneda } from "../../lib";
 import { useState } from "react";
+import Image from "next/image";
+import { formatearMoneda } from "../lib/index";
+import useTienda from "../hooks/useTienda"
 
-export default function Pedido({ nombre, imagen, id, cantidad, precio }) {
+export default function Pedido({ pedido }) {
+  const { nombre, imagen, id, cantidad, precio } = pedido;
+  const { removeProducto, hanbleChangeCantidad } = useTienda();
   const [edit, setEdit] = useState(false);
   const [newCantidad, setNewCantidad] = useState(cantidad);
-  const { removeProducto, hanbleChangeCantidad } = useTienda();
 
   return (
     <article className="border min-h-[170px] relative rounded-2xl overflow-hidden grid grid-flow-col gap-3 items-center">
@@ -18,12 +19,14 @@ export default function Pedido({ nombre, imagen, id, cantidad, precio }) {
         className="img-pedido block object-cover"
       />
       <div className="text-center md:text-left space-y-1">
-        <h2 className="font-bold xl:text-lg text-amber-500 truncate">{nombre}</h2>
+        <h2 className="font-bold xl:text-lg text-amber-500 truncate">
+          {nombre}
+        </h2>
         <p className="xl:text-lg  text-amber-500">
           Precio:{" "}
           <span className="text-slate-900">{formatearMoneda(precio)}</span>
         </p>
-        <div className={`${edit ? 'flex gap-2 md:gap-6':''} `}>
+        <div className={`${edit ? "flex gap-2 md:gap-6" : ""} `}>
           <p className=" text-amber-500">
             Cantidad: <span className="text-slate-900">{newCantidad}</span>
           </p>

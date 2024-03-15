@@ -1,6 +1,6 @@
-import Pedido from "./components/pedido"
-import useTienda from "./hooks/useTienda"
-import Layout from "./layout/layout"
+import useTienda from "../hooks/useTienda"
+import Pedido from "../components/pedido"
+import Layout from "../layout/layout"
 export default function Resumen() {
 
   const{pedido} = useTienda()
@@ -19,7 +19,7 @@ export default function Resumen() {
           {
             isValid ?(
             pedido.map( ped=>(
-              <Pedido key={ped.id} {...ped}/>
+              <Pedido key={ped.id} pedido={ped}/>
             ))
 
             ):(

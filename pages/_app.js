@@ -1,5 +1,5 @@
+import { CoffeeProvider } from '../context/CoffeeProvider'
 import '../styles/globals.css'
-import { CoffeeProvider } from './context/CoffeeProvider'
 
 function MyApp({ Component, pageProps }) {
   return (

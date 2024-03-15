@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { formatearFecha, formatearMoneda } from "../../lib";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { formatearFecha, formatearMoneda } from "../lib/index";
 
 export default function Orden({ id, nombre, fecha, total, pedido }) {
   

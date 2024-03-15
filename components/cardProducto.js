@@ -1,9 +1,10 @@
 import Image from "next/image";
+import {formatearMoneda} from "../lib/index"
 import useTienda from "../hooks/useTienda"
-import { formatearMoneda } from "../../lib";
 
-export default function CardProducto({ nombre, precio, imagen, id }) {
+export default function CardProducto({producto}) {
   const {handleSelectProduct, handleChangeModal} = useTienda()
+  const { nombre, precio, imagen, id } = producto
 
   return (
     <article className="w-full max-w-[380px] bg-white shadow border rounded-md p-4 space-y-3">

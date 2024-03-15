@@ -1,7 +1,7 @@
-import AdminLayout from "../layout/adminLayout";
-import { PrismaClient } from "@prisma/client";
-import { formatearMoneda } from "../../lib/index";
 import { useEffect, useState } from "react";
+import AdminLayout from "../../layout/adminLayout"
+import { formatearMoneda } from "../../lib";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function getStaticProps() {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import useTienda from "../hooks/useTienda";
 import clsx from "clsx";
+import useTienda from "../hooks/useTienda"
 
 const links = [
   {  id: 1, href: "/", name: "Menu" },

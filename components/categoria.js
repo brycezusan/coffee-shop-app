@@ -1,10 +1,11 @@
 import Image from "next/image";
-import useTienda from "../hooks/useTienda";
 import { clsx } from "clsx";
+import useTienda from "../hooks/useTienda"
 
 export default function Categoria({ categoria }) {
   const { handleClickCategoria, categoriaActual } = useTienda();
   const { id, nombre, icono } = categoria;
+  console.log(nombre)
   return (
     <div
       className={clsx(
@@ -22,7 +23,7 @@ export default function Categoria({ categoria }) {
         className="img-cat max-w-[80px]"
       />
       <button onClick={() => handleClickCategoria(id)} className="text-xl">
-        {nombre}
+        {nombre || null}
       </button>
     </div>
   );

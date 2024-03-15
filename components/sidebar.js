@@ -1,6 +1,6 @@
 import Image from "next/image";
-import useTienda from "../hooks/useTienda";
 import Categoria from "./categoria";
+import useTienda from "../hooks/useTienda";
 
 export default function Sidebar(){ 
 

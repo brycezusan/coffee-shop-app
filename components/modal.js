@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Image from "next/image";
-import useTienda from "../hooks/useTienda";
-import { formatearMoneda } from "../../lib/index";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { formatearMoneda } from "../lib/index";
+import useTienda from "../hooks/useTienda"
 
 export default function ModalProducto() {
   const [cantidad, setCantidad] = useState(1);
@@ -10,29 +10,29 @@ export default function ModalProducto() {
   const { producto, pedido, handleChangeModal, handleAddPedido } = useTienda();
 
   useEffect(() => {
-    if (pedido.some((ped) => ped.id === producto.id)) {
+    if (pedido.some((ped) => ped?.id === producto?.id)) {
       const index = pedido.findIndex((ped) => ped.id === producto.id);
       const productoPedido = pedido[index];
       setCantidad(productoPedido.cantidad);
       setEditar(true);
     }
   }, [pedido]);
-  
+
   return (
     <article className="flex items-center gap-10 relative">
       <Image
         width={200}
         height={150}
-        alt={`imagen-producto-${producto.nombre}`}
-        src={`/assets/img/${producto.imagen}.jpg`}
+        alt={`imagen-producto-${producto?.nombre}`}
+        src={`/assets/img/${producto?.imagen}.jpg`}
         className="block object-cover aspect-auto "
       />
       <div className="text-xl text-center text-amber-400  lg:text-left space-y-4">
-        <h2>{producto.nombre}</h2>
+        <h2>{producto?.nombre}</h2>
         <p>
           Precio:{" "}
           <span className="text-slate-500">
-            {formatearMoneda(producto.precio)}
+            {formatearMoneda(producto?.precio)}
           </span>
         </p>
         <div>
@@ -97,7 +97,6 @@ export default function ModalProducto() {
           >
             {editar ? "actualizar pedido" : "añadir pedido"}
           </button>
-          
         </div>
       </div>
       <button

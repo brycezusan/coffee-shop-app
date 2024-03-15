@@ -1,12 +1,12 @@
 import useSWR from "swr";
-import Layout from "./layout/adminLayout";
+import Layout from "../layout/adminLayout"
+import Orden from "../components/orden"
 import axios from "axios";
-import Orden from "./components/orden";
 
 const fetcher = (url) => axios(url).then((res) => res.data);
 
 export default function Admin() {
-  const { data, error, isLoading } = useSWR("/api/orden", fetcher ,{refreshInterval:500});
+  const { data } = useSWR("/api/orden", fetcher ,{refreshInterval:500});
 
   const isValid = data?.length > 0;
 
