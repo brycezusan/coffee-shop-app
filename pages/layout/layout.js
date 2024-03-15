@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Head from "next/head";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/sidebar";
 import ModalProducto from "../components/modal"
 import Modal from "react-modal";
 import useTienda from "../hooks/useTienda";
